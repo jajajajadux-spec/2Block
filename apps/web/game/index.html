@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>2Block — play</title><link rel="stylesheet" href="/game/game.css">
+  <script type="module" src="/game/client.js"></script>
+</head>
+<body>
+  <canvas id="world" tabindex="0" aria-label="3D game world. Move with WASD, jump with Space. Right-drag to orbit the camera."></canvas>
+  <div id="nametags" aria-hidden="true"></div>
+  <header class="hud"><div class="room"><a href="/" aria-label="Back to games">▣</a><div><strong id="room-title">2Block</strong><span id="connection" role="status">Connecting…</span></div></div><div class="hud-actions"><span id="coin-count">0 / 7 coins</span><button id="menu-button">Menu <kbd>Esc</kbd></button></div></header>
+  <aside class="quest"><span class="eyebrow">YOUR NEXT ADVENTURE</span><strong>Reach the golden flag</strong><p>Jump up the small platforms.<br>Collect all 7 coins along the way.</p><span id="checkpoint">Checkpoint: Spawn</span></aside>
+  <p id="toast" role="status" aria-live="polite" hidden></p>
+  <div id="reconnect" hidden>Connection lost. <button id="rejoin">Reconnect</button><a href="/">Back to games</a></div>
+  <div class="bottom-hud"><p id="hint">WASD to move · Space to jump · Right-drag to look · Scroll to zoom</p><nav class="hotbar" aria-label="Tools">
+    <button data-tool="walk" class="selected" aria-pressed="true"><kbd>1</kbd><span>Explore</span></button>
+    <button data-tool="place" aria-pressed="false"><kbd>2</kbd><span>Build</span></button>
+    <button data-tool="remove" aria-pressed="false"><kbd>3</kbd><span>Remove</span></button>
+    <button id="wave"><kbd>4</kbd><span>Wave</span></button>
+    <label class="swatch">Block color<input id="block-color" type="color" value="#58c9a5"></label>
+  </nav></div>
+  <div class="touch-controls" aria-label="Touch movement"><div class="dpad"><button data-key="KeyW" aria-label="Forward">↑</button><button data-key="KeyA" aria-label="Left">←</button><button data-key="KeyS" aria-label="Back">↓</button><button data-key="KeyD" aria-label="Right">→</button></div><button id="touch-jump">Jump</button></div>
+  <dialog id="welcome" aria-labelledby="welcome-title"><span class="eyebrow">WELCOME TO 2BLOCK</span><h1 id="welcome-title">Make yourself at home.</h1><p id="welcome-text">A shared 3D playground. Build something, find the coins, or just hang out.</p><div class="control-grid"><span><kbd>W A S D</kbd> Move</span><span><kbd>Space</kbd> Jump</span><span><kbd>Shift</kbd> Sprint</span><span><kbd>Right drag</kbd> Look around</span></div><button id="start" class="primary" disabled>Connecting…</button><a class="back" href="/">Back to games</a></dialog>
+  <dialog id="pause" aria-labelledby="pause-title"><span class="eyebrow">TAKE A BREATHER</span><h2 id="pause-title">Game menu</h2><p>Your friends are still playing. Your character stays here while this menu is open.</p><button id="resume" class="primary">Keep playing</button><button id="respawn">Respawn at checkpoint <kbd>R</kbd></button><button id="fullscreen">Toggle fullscreen</button><details><summary>Controls & building</summary><p>WASD / arrows: move · Space: jump · Shift: sprint · Q/E or right-drag: rotate · Scroll: zoom · 1/2/3: tools · 4: wave · R: respawn.</p><p>Choose Build, then click the ground or the face of a block. Choose Remove to remove your own blocks. You can build within 5 blocks of your character. Checkpoints and original scenery stay protected.</p><p>On touchscreens, use the arrows and Jump. Drag the world in Explore mode to look around; tap with Build or Remove selected to edit.</p></details><a class="back" id="leave" href="/">Leave game</a></dialog>
+</body>
+</html>

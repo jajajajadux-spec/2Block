@@ -1,0 +1,2 @@
+# Packaging only. The prototype itself uses the Python standard library.
+PyInstaller==6.11.1

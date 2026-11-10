@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111a20">
+  <title>2Block — pick a place</title>
+  <link rel="stylesheet" href="/style.css">
+  <script type="module" src="/app.js"></script>
+</head>
+<body>
+  <header><a class="wordmark" href="/">▣ 2Block</a><span>A few blocks. A place to play.</span></header>
+  <main>
+    <section class="intro"><span class="eyebrow">YOUR NEXT LITTLE ADVENTURE</span><h1>Build something.<br>Go somewhere.</h1><p>A shared 3D playground, one click away. Pick your look and jump in — no account or download needed.</p><div class="feature-strip"><span>✓ Play in your browser</span><span>✓ Build with friends</span><span>✓ Free & open source</span></div></section>
+    <div class="layout">
+      <section aria-labelledby="games-title"><div class="section-heading"><h2 id="games-title">Find your next adventure</h2><span>Up to 16 players per world</span></div><div id="games" class="games"></div><p class="play-help">First time? Choose <strong>Play Now</strong>. The game opens here with a quick guide to the controls.</p></section>
+      <aside aria-labelledby="profile-title">
+        <h2 id="profile-title">This is you</h2>
+        <div class="avatar-preview" aria-label="Your avatar"><div id="preview-hat"></div><div id="preview-head"></div><div id="preview-body"></div><div class="legs"></div></div>
+        <form id="profile">
+          <label for="username">Guest name</label><input id="username" name="username" maxlength="24" required autocomplete="nickname">
+          <div class="colors"><label>Shirt<input id="body-color" type="color" aria-label="Shirt color"></label><label>Head<input id="head-color" type="color" aria-label="Head color"></label></div>
+          <label for="hat">Headwear</label><select id="hat"><option value="none">No hat</option><option value="cap">Cap</option><option value="tall">Tall hat</option></select>
+          <p class="muted">Saved in this browser. Guest names aren't unique.</p>
+        </form>
+      </aside>
+    </div>
+    <p id="status" role="status" aria-live="polite">Loading places…</p>
+  </main>
+  <footer>Small by design. Open source under MIT.</footer>
+  <dialog id="install-dialog" aria-labelledby="install-title">
+    <form method="dialog"><button class="close secondary" aria-label="Close">×</button></form>
+    <span class="eyebrow">DESKTOP CLIENT</span><h2 id="install-title">Didn't open?</h2>
+    <p id="launch-help">We haven't heard from the client yet. Accept your browser's “Open 2Block” prompt, or install the client below.</p>
+    <a id="retry" class="button" href="#">Open 2Block again</a>
+    <a id="download" class="button secondary" hidden download="2Block-Setup.exe">Download Windows installer</a>
+    <p id="source-install">From the repository, run <code>python -m apps.client --register</code>. See <code>docs/INSTALL.md</code> for setup and other systems.</p>
+    <p class="muted">After downloading, run the installer, return here, and open the game again. Your browser will ask before opening an external app.</p>
+  </dialog>
+</body>
+</html>
